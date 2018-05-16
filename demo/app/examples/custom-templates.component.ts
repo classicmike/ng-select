@@ -35,7 +35,7 @@ import { distinctUntilChanged, debounceTime, switchMap } from 'rxjs/operators'
                             Some quick example text to build
                         </p>
                         <div *ngIf="item.name === 'Pavilnys'">
-                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Annnnnnnn link</a>
                             <a href="#" class="card-link">Another link</a>
                         </div>
                     </div>
@@ -125,9 +125,16 @@ import { distinctUntilChanged, debounceTime, switchMap } from 'rxjs/operators'
 
         <label>Custom search</label>
         ---html,true
+        <p>Basic Example</p>
         <ng-select #api [items]="cities" [searchable]="false" [(ngModel)]="selectedCity" bindLabel="name" bindValue="name">
             <ng-template ng-header-tmp>
                 <input style="width: 100%; line-height: 24px" type="text" (input)="api.filter($event.target.value)" />
+            </ng-template>
+        </ng-select>
+        <p>Append Dropdown to Body</p>
+        <ng-select #append [items]="cities" [appendTo]="'body'" [searchable]="false" [(ngModel)]="selectedCity" bindLabel="name" bindValue="name">
+            <ng-template ng-header-tmp>
+                <input style="width: 100%; line-height: 24px" type="text" (input)="append.filter($event.target.value)" />
             </ng-template>
         </ng-select>
         ---
